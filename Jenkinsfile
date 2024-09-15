@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Stage 2') {
       steps {
-        echo 'Hello stage2'
+        echo 'Hello Stage 2'
       }
     }
 
@@ -17,5 +17,17 @@ pipeline {
           echo 'Stage 2 failed. Hello Stage 3'
       }
     }
+    
+
+    post {
+        always {
+            stage('Stage 4') {
+                steps {
+                    echo 'Hello Stage 4'
+                }
+            }
+        }
+    }
+    
   }
 }
