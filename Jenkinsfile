@@ -9,12 +9,12 @@ pipeline {
 
     stage('Stage 3') {
      when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'FAILURE' 
-              }
-            }
+        expression {
+           currentBuild.result == 'FAILURE' 
+         }
+      }
       steps {
-          sh 'Stage 2 failed. Hello Stage 3'
+          echo 'Stage 2 failed. Hello Stage 3'
       }
     }
   }
