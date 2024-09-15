@@ -17,9 +17,9 @@ pipeline {
           echo 'Stage 2 failed. Hello Stage 3'
       }
     }
-    
+  }
 
-    post {
+  post {
         always {
             stage('Stage 4') {
                 steps {
@@ -28,6 +28,4 @@ pipeline {
             }
         }
     }
-    
-  }
 }
